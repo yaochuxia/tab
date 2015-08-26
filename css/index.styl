@@ -1,2 +1,54 @@
 @import('reset.styl')
 global-reset()
+.container
+	 width:800px
+	    height:400px
+	    margin:100px auto
+	    background-color:#fff
+	    border-radius:0 0 5px 5px
+	    box-shadow:0 1px 3px rgba(0,0,0,0.1) 
+	.tab_warpper
+		width:800px
+		height:60px
+		position:relative
+		background-color:#32CD32
+		border-radius:5px 5px 0 0
+		.tab_radio
+			display:none
+		.tab_radio:checked + .tab_handler
+			color: #fff 
+			background-color: #e74c3c 
+			transform: scale(1)		
+		.tab_handler
+			position:relative
+			z-index:2
+			display:block
+			float:left
+			height:60px
+			line-height:60px
+			padding:0 40px
+			color:#fff
+			transiton:.3s
+			transform:scale(.9)
+		.tab_content
+			visibility: hidden
+			position: absolute
+			top: 60px
+			left: 0
+			width: 740px
+			padding: 30px
+			color: #999
+			font-size: 14px
+			line-height: 1.618em
+			background-color: #fff
+			opacity: 0
+			transition: transform .5s, opacity .7s
+			transform: translateY(20px)
+		.tab_radio:checked + .tab_handler
+			color: #fff 
+			background-color: #58B711
+			transform: scale(1)
+		.tab_radio:checked + .tab_handler + .tab_content
+			visibility: visible
+			opacity: 1;
+			transform: scale(1)	
